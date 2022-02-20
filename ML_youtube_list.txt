@@ -1,0 +1,13 @@
+Data Science Essentials
+<A Youtube repo>
+
+Regression Trees: https://www.youtube.com/watch?v=g9c66TUylZ4
+
+
+AdaBoost: https://www.youtube.com/watch?v=LsK-xG1cLYA&t=293s&ab_channel=StatQuestwithJoshStarmer
+
+Gradient Boost (Difference from AdaBoost): https://www.youtube.com/watch?v=3CC4N4z3GJc&ab_channel=StatQuestwithJoshStarmer
+
+Gradient Boost(Regression details): https://www.youtube.com/watch?v=2xudPOBz-vs&ab_channel=StatQuestwithJoshStarmer
+
+XGBoost: https://www.youtube.com/watch?v=OtD8wVaFm6E&t=210s&ab_channel=StatQuestwithJoshStarmer
