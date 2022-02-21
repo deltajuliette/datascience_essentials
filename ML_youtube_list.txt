@@ -1,6 +1,8 @@
 Data Science Essentials
 <A Youtube repo>
 
+Chain rule: https://www.youtube.com/watch?v=wl1myxrtQHQ&ab_channel=StatQuestwithJoshStarmer
+
 Regression Trees: https://www.youtube.com/watch?v=g9c66TUylZ4
 
 AdaBoost: https://www.youtube.com/watch?v=LsK-xG1cLYA&t=293s&ab_channel=StatQuestwithJoshStarmer
