@@ -3,6 +3,8 @@ Data Science Essentials
 
 Chain rule: https://www.youtube.com/watch?v=wl1myxrtQHQ&ab_channel=StatQuestwithJoshStarmer
 
+SVM: https://www.youtube.com/watch?v=efR1C6CvhmE&t=644s&ab_channel=StatQuestwithJoshStarmer
+
 Regression Trees: https://www.youtube.com/watch?v=g9c66TUylZ4
 
 AdaBoost: https://www.youtube.com/watch?v=LsK-xG1cLYA&t=293s&ab_channel=StatQuestwithJoshStarmer
