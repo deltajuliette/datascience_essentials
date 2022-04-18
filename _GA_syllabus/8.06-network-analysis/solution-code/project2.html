@@ -1,0 +1,108 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 500px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"group": "M", "id": "DJ", "label": "DJ", "shape": "dot", "size": 10}, {"group": "M", "id": "Darren", "label": "Darren", "shape": "dot", "size": 10}, {"group": "M", "id": "Darien", "label": "Darien", "shape": "dot", "size": 10}, {"group": "M", "id": "Zhewei", "label": "Zhewei", "shape": "dot", "size": 10}, {"group": "M", "id": "Wee Hong", "label": "Wee Hong", "shape": "dot", "size": 10}, {"group": "M", "id": "Hong Aik", "label": "Hong Aik", "shape": "dot", "size": 10}, {"group": "F", "id": "May Gee", "label": "May Gee", "shape": "dot", "size": 10}, {"group": "F", "id": "Nazira", "label": "Nazira", "shape": "dot", "size": 10}, {"group": "F", "id": "Jia Wen", "label": "Jia Wen", "shape": "dot", "size": 10}, {"group": "M", "id": "Chee Tzen", "label": "Chee Tzen", "shape": "dot", "size": 10}, {"group": "M", "id": "Zhi Yuan", "label": "Zhi Yuan", "shape": "dot", "size": 10}, {"group": "M", "id": "Hang Feng", "label": "Hang Feng", "shape": "dot", "size": 10}, {"group": "M", "id": "Yu Kiat", "label": "Yu Kiat", "shape": "dot", "size": 10}, {"group": "M", "id": "Flash", "label": "Flash", "shape": "dot", "size": 10}, {"group": "F", "id": "Kimberly", "label": "Kimberly", "shape": "dot", "size": 10}, {"group": "M", "id": "Bryan", "label": "Bryan", "shape": "dot", "size": 10}, {"group": "M", "id": "Vincent", "label": "Vincent", "shape": "dot", "size": 10}, {"group": "M", "id": "Zheng Foong", "label": "Zheng Foong", "shape": "dot", "size": 10}, {"group": "F", "id": "Mitchelle", "label": "Mitchelle", "shape": "dot", "size": 10}, {"group": "M", "id": "Raymond", "label": "Raymond", "shape": "dot", "size": 10}, {"group": "F", "id": "Mun Yee", "label": "Mun Yee", "shape": "dot", "size": 10}, {"group": "M", "id": "Brandon", "label": "Brandon", "shape": "dot", "size": 10}, {"group": "M", "id": "Thien Sean", "label": "Thien Sean", "shape": "dot", "size": 10}, {"group": "M", "id": "Cheng Kiat", "label": "Cheng Kiat", "shape": "dot", "size": 10}, {"group": "F", "id": "Shuyi", "label": "Shuyi", "shape": "dot", "size": 10}, {"group": "M", "id": "Cheng Yeow", "label": "Cheng Yeow", "shape": "dot", "size": 10}, {"group": "M", "id": "Sean Ng", "label": "Sean Ng", "shape": "dot", "size": 10}, {"group": "F", "id": "Kris Ng", "label": "Kris Ng", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "DJ", "to": "Darren", "weight": 1}, {"from": "DJ", "to": "Darien", "weight": 1}, {"from": "DJ", "to": "Zhewei", "weight": 1}, {"from": "DJ", "to": "Wee Hong", "weight": 1}, {"from": "Darren", "to": "Darien", "weight": 1}, {"from": "Darren", "to": "Zhewei", "weight": 1}, {"from": "Darren", "to": "Wee Hong", "weight": 1}, {"from": "Darien", "to": "Zhewei", "weight": 1}, {"from": "Darien", "to": "Wee Hong", "weight": 1}, {"from": "Zhewei", "to": "Wee Hong", "weight": 1}, {"from": "Hong Aik", "to": "May Gee", "weight": 1}, {"from": "Hong Aik", "to": "Nazira", "weight": 1}, {"from": "Hong Aik", "to": "Jia Wen", "weight": 1}, {"from": "Hong Aik", "to": "Chee Tzen", "weight": 1}, {"from": "May Gee", "to": "Nazira", "weight": 1}, {"from": "May Gee", "to": "Jia Wen", "weight": 1}, {"from": "May Gee", "to": "Chee Tzen", "weight": 1}, {"from": "Nazira", "to": "Jia Wen", "weight": 1}, {"from": "Nazira", "to": "Chee Tzen", "weight": 1}, {"from": "Jia Wen", "to": "Chee Tzen", "weight": 1}, {"from": "Zhi Yuan", "to": "Hang Feng", "weight": 1}, {"from": "Zhi Yuan", "to": "Yu Kiat", "weight": 1}, {"from": "Zhi Yuan", "to": "Flash", "weight": 1}, {"from": "Zhi Yuan", "to": "Kimberly", "weight": 1}, {"from": "Hang Feng", "to": "Yu Kiat", "weight": 1}, {"from": "Hang Feng", "to": "Flash", "weight": 1}, {"from": "Hang Feng", "to": "Kimberly", "weight": 1}, {"from": "Yu Kiat", "to": "Flash", "weight": 1}, {"from": "Yu Kiat", "to": "Kimberly", "weight": 1}, {"from": "Flash", "to": "Kimberly", "weight": 1}, {"from": "Bryan", "to": "Vincent", "weight": 1}, {"from": "Bryan", "to": "Zheng Foong", "weight": 1}, {"from": "Bryan", "to": "Mitchelle", "weight": 1}, {"from": "Vincent", "to": "Zheng Foong", "weight": 1}, {"from": "Vincent", "to": "Mitchelle", "weight": 1}, {"from": "Zheng Foong", "to": "Mitchelle", "weight": 1}, {"from": "Raymond", "to": "Mun Yee", "weight": 1}, {"from": "Raymond", "to": "Brandon", "weight": 1}, {"from": "Raymond", "to": "Thien Sean", "weight": 1}, {"from": "Raymond", "to": "Cheng Kiat", "weight": 1}, {"from": "Mun Yee", "to": "Brandon", "weight": 1}, {"from": "Mun Yee", "to": "Thien Sean", "weight": 1}, {"from": "Mun Yee", "to": "Cheng Kiat", "weight": 1}, {"from": "Brandon", "to": "Thien Sean", "weight": 1}, {"from": "Brandon", "to": "Cheng Kiat", "weight": 1}, {"from": "Thien Sean", "to": "Cheng Kiat", "weight": 1}, {"from": "Shuyi", "to": "Cheng Yeow", "weight": 1}, {"from": "Shuyi", "to": "Sean Ng", "weight": 1}, {"from": "Shuyi", "to": "Kris Ng", "weight": 1}, {"from": "Cheng Yeow", "to": "Sean Ng", "weight": 1}, {"from": "Cheng Yeow", "to": "Kris Ng", "weight": 1}, {"from": "Sean Ng", "to": "Kris Ng", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
